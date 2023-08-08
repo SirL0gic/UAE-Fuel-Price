@@ -14,7 +14,7 @@ function App() {
   return (
    <Container fluid className="main-container">
     <Row className="hero-section">
-      <Col className="col-one">
+      <Col className="col-one" lg={12}>
         <Hero/>
       </Col>
     </Row>

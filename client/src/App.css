@@ -1,0 +1,44 @@
+/* for mobile phones */
+@media only screen and (max-width: 767px) {
+    .headings-box {
+        margin-top: 50px !important;
+        margin-left: 0px !important;
+    }
+
+    .headings-box > h1 {
+        color: #FF715D;
+        font-weight: bold;
+        font-size: 50px !important;
+    }
+
+}
+
+/* For iPad and Tbales */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+    .headings-box {
+        margin-top: 150px !important;
+        margin-left: 60px;
+    }
+    
+   
+   }
+
+.headings-box {
+    margin-top: 300px;
+    margin-left: 60px;
+}
+
+.headings-box > h1 {
+    color: #FF715D;
+    font-weight: bold;
+    font-size: 100px;
+}
+
+.headings-box > h2 {
+    color: rgba(0, 0, 0, 0.539);
+}
+
+.image-box {
+    margin-top: 50px;
+}

@@ -6,15 +6,15 @@ import carLogo from "../assets/car.svg"
 
 let Hero = () => {
   return (
-    <Container>
+    <Container fluid>
       <Row>
-        <Col className="col-two">
+        <Col className="col-two" lg={6}>
           <div className="headings-box">
             <h1>Fuel Watch  UAE</h1>
             <h2>Navigating Past & Present Fuel Prices</h2>
           </div>
         </Col>
-        <Col className="col-three">
+        <Col className="col-three" lg={6}>
           <div className="image-box">
             <img src={carLogo}/>
           </div>
