@@ -1,34 +1,47 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 
-// let CardBox = () => {
-//   return (
+// USE SINGLE CARD ELSE THIS WILL NOT WORK AS PROPS NEED TO BE PSSED DOWN
 
-//   )
-// };
+let CardBox = () => {
+  return (
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src="https://i.imgur.com/oMpEZpa.png" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  );
+};
 
 let PriceRow = () => {
   return (
-    <div className="group-four">
-            <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 4 }).map((_, idx) => (
-        <Col key={idx}>
-          <Card>
-            <Card.Img variant="top" src="https://i.imgur.com/fQnAmTV.png" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+    <Container fluid>
+      <Row>
+        <Col lg={3} sm={12}>
+          {" "}
+          <CardBox />
         </Col>
-      ))}
-    </Row>
-    </div>
- 
+        <Col lg={3} sm={12}>
+          {" "}
+          <CardBox />
+        </Col>
+        <Col lg={3} sm={12}>
+          {" "}
+          <CardBox />
+        </Col>
+        <Col lg={3} sm={12}>
+          {" "}
+          <CardBox />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
 export default PriceRow;
+
+// https://i.imgur.com/oMpEZpa.png
