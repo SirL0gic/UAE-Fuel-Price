@@ -13,14 +13,13 @@
 
 }
 
-/* For iPad and Tbales */
+/* For iPad and Tablets */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 
     .headings-box {
         margin-top: 150px !important;
         margin-left: 60px;
     }
-    
    
    }
 
@@ -41,4 +40,24 @@
 
 .image-box {
     margin-top: 50px;
+}
+
+.col-one {
+    background-color: bisque;
+}
+
+.col-two {
+    background-color: bisque;
+}
+
+.price-section{
+    background-color: white;
+}
+
+.card {
+    max-width: 300px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
