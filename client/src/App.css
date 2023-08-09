@@ -1,5 +1,10 @@
 /* for mobile phones */
 @media only screen and (max-width: 767px) {
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
   .headings-box {
     margin-top: 50px !important;
     margin-left: 0px !important;
@@ -11,16 +16,27 @@
     font-size: 50px !important;
   }
 
-  /* .card {
-        width: 300px !important;
-        
-    }
+  .price-card-container-row {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
 
-    .group-four {
-        margin-top: 100px;
-        padding-right: 0px !important;
-        padding-left: 0px !important;
-    } */
+  .price-card-container {
+    margin-top: 120px;
+    margin-left: 27px !important;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .recharts-wrapper {
+    margin-left: -50px !important;
+  }
+
+  .graph-container {
+    margin-top: 100px!important;
+  }
 }
 
 /* For iPad and Tablets */
@@ -69,4 +85,12 @@
 .price-card-container-row {
   padding-right: 100px;
   padding-left: 150px;
+}
+
+.graph-container {
+  margin-top: 150px;
+}
+
+.recharts-wrapper {
+  margin: auto;
 }

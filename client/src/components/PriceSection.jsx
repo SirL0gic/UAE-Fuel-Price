@@ -2,15 +2,14 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 
 // USE SINGLE CARD ELSE THIS WILL NOT WORK AS PROPS NEED TO BE PSSED DOWN
 
-let CardBox = () => {
+let CardBox = (props) => {
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="https://i.imgur.com/oMpEZpa.png" />
+      <Card.Img variant="top" src={props.image} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{props.price}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {props.type}
         </Card.Text>
       </Card.Body>
     </Card>
@@ -23,19 +22,19 @@ let PriceRow = () => {
       <Row className="price-card-container-row">
         <Col lg={3} sm={12}>
           {" "}
-          <CardBox />
+          <CardBox image="https://i.imgur.com/fQnAmTV.png" price="2.5 AED" type="Super (98) has a high octane rating and is appropriate for high-performance gasoline automobiles. Super fuel is required for high-performance vehicles" />
         </Col>
         <Col lg={3} sm={12}>
           {" "}
-          <CardBox />
+          <CardBox image="https://i.imgur.com/oMpEZpa.png"  price="2.5 AED" type="Special (95) has a high octane rating and provides excellent performance in all gasoline-powered vehicles with medium compression engines. "  />
         </Col>
         <Col lg={3} sm={12}>
           {" "}
-          <CardBox />
+          <CardBox image="https://i.imgur.com/v8hiCr2.png"  price="2.5 AED" type="E-Plus 91 fuel is typically used in engines with low compression. Customers who operate fleets and commercial trucks are likely to utilize this fuel"  />
         </Col>
         <Col lg={3} sm={12}>
           {" "}
-          <CardBox />
+          <CardBox image="https://i.imgur.com/kTjld9p.png"  price="2.5 AED" type="Diesel fuel, also called diesel oil or historically heavy oil, is any liquid fuel specifically designed for use in a diesel engine. Diesel engines are more fuel-efficient"  />
         </Col>
       </Row>
     </Container>
