@@ -19,8 +19,8 @@ let CardBox = () => {
 
 let PriceRow = () => {
   return (
-    <Container fluid>
-      <Row>
+    <Container fluid className="price-card-container">
+      <Row className="price-card-container-row">
         <Col lg={3} sm={12}>
           {" "}
           <CardBox />

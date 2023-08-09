@@ -1,17 +1,17 @@
 /* for mobile phones */
 @media only screen and (max-width: 767px) {
-    .headings-box {
-        margin-top: 50px !important;
-        margin-left: 0px !important;
-    }
+  .headings-box {
+    margin-top: 50px !important;
+    margin-left: 0px !important;
+  }
 
-    .headings-box > h1 {
-        color: #FF715D;
-        font-weight: bold;
-        font-size: 50px !important;
-    }
+  .headings-box > h1 {
+    color: #ff715d;
+    font-weight: bold;
+    font-size: 50px !important;
+  }
 
-    /* .card {
+  /* .card {
         width: 300px !important;
         
     }
@@ -21,60 +21,52 @@
         padding-right: 0px !important;
         padding-left: 0px !important;
     } */
-
 }
 
 /* For iPad and Tablets */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-
-    .headings-box {
-        margin-top: 150px !important;
-        margin-left: 60px;
-    }
-   
-   }
+  .headings-box {
+    margin-top: 150px !important;
+    margin-left: 60px;
+  }
+}
 
 .headings-box {
-    margin-top: 300px;
-    margin-left: 60px;
+  margin-top: 300px;
+  margin-left: 60px;
 }
 
 .headings-box > h1 {
-    color: #FF715D;
-    font-weight: bold;
-    font-size: 100px;
+  color: #ff715d;
+  font-weight: bold;
+  font-size: 100px;
 }
 
 .headings-box > h2 {
-    color: rgba(0, 0, 0, 0.539);
+  color: rgba(0, 0, 0, 0.539);
 }
 
 .image-box {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .col-one {
-    background-color: bisque;
+  background-color: bisque;
 }
 
 .col-two {
-    background-color: bisque;
+  background-color: bisque;
 }
 
-.price-section{
-    background-color: white;
-    
+.price-section {
+  background-color: white;
 }
 
-/* .group-four {
-    margin-top: 100px;
-    padding-right: 200px;
-    padding-left: 200px;
+.price-card-container {
+  margin-top: 100px;
 }
 
-.card {
-    width: 600px;
-    margin: auto;
-    margin-bottom: 50px;
-} */
-
+.price-card-container-row {
+  padding-right: 100px;
+  padding-left: 150px;
+}
