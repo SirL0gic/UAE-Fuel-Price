@@ -39,7 +39,7 @@ let PriceRow = () => {
     <Container fluid className="price-card-container">
       <Row className="price-card-container-row">
         <h2 className="price-heading">
-          Current Fuel Prices in AED for {currentMonthName} {currentYear}
+          Current Fuel Prices in AED for:  {currentMonthName} {currentYear}
         </h2>
         <Col lg={3} sm={12}>
           {" "}

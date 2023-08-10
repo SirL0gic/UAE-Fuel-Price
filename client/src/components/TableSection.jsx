@@ -50,17 +50,15 @@ const FuelPriceTable = () => {
   return (
     <Container fluid className="table-container">
       <Row>
-        <Col lg={12} >
-      
-
+        <Col lg={12}>
           <Table striped bordered hover className="main-table">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Super 98</th>
-                <th>Special 95</th>
-                <th>E Plus 91</th>
-                <th>Diesel</th>
+                <th style={{ color: "black" }}>Date</th>
+                <th style={{ color: "black" }}>Super 98</th>
+                <th style={{ color: "black" }}>Special 95</th>
+                <th style={{ color: "black" }}>E Plus 91</th>
+                <th style={{ color: "black" }}>Diesel</th>
               </tr>
             </thead>
             <tbody>
