@@ -11,7 +11,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import Graph from "./components/GraphSection";
 
 function App() {
   const [fuelData, setFuelData] = useState([null]);
