@@ -37,8 +37,8 @@ function App() {
         <Graphh />
       </Col>
       <Row className="table-section">
-        <Col className="col-five" lg={12}>
-          {/* <FuelPriceTable /> */}
+        <Col className="d-flex justify-content-center" lg={12}>
+          <FuelPriceTable />
         </Col>
       </Row>
       <Row className="footer-section"></Row>

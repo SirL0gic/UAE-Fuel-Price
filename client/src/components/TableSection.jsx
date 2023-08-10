@@ -48,9 +48,11 @@ const data = [
         diesel: '2.95',
       },
   ];
+
+
   
   return (
-    <Table striped bordered hover>
+    <Table striped bordered hover className="main-table">
       <thead>
         <tr>
           <th>Date</th>

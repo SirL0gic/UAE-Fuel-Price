@@ -94,3 +94,19 @@
 .recharts-wrapper {
   margin: auto;
 }
+
+.main-table {
+  margin-top: 150px;
+  width: 80% !important;
+}
+
+.table {
+  border-color: black !important;
+
+}
+
+.table > thead{
+
+  color: #ff715d;
+
+}
