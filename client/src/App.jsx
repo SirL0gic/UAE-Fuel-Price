@@ -5,12 +5,11 @@ import Hero from "./components/HeroSection";
 import PriceRow from "./components/PriceSection";
 import Graphh from "./components/GraphSection";
 import FuelPriceTable from "./components/TableSection";
+import Footer from "./components/FooterSection";
 
 // Styles
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 
 function App() {
   const [fuelData, setFuelData] = useState([null]);
@@ -40,7 +39,11 @@ function App() {
           <FuelPriceTable />
         </Col>
       </Row>
-      <Row className="footer-section"></Row>
+      <Row className="footer-section">
+        <Col lg={12}>
+          <Footer />
+        </Col>
+      </Row>
     </Container>
   );
 }
