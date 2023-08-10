@@ -5,7 +5,7 @@ import carLogo from "../assets/car.svg"
 
 let Hero = () => {
   return (
-    <Container fluid>
+    <Container fluid className="hero">
       <Row>
         <Col className="col-two" lg={6}>
           <div className="headings-box">

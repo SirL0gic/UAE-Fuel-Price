@@ -61,6 +61,7 @@ export default function Graphh() {
     <Container fluid className="graph-container">
       <Row>
         <Col lg={12}>
+        <h2 className="table-heading">Historical Fuel Prices in AED</h2>
           <LineChart
             width={isMobile ? 400 : 800}
             height={isMobile ? 400 : 800}
