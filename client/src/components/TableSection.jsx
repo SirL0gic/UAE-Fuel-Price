@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
 
-const FuelPriceTable = () => {
+const FuelPriceTable = (props) => {
   const data = [
     {
       date: "March 2023",

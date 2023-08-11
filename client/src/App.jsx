@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import Hero from "./components/HeroSection";
 import PriceRow from "./components/PriceSection";
-import Graphh from "./components/GraphSection";
+import Graph from "./components/GraphSection";
 import FuelPriceTable from "./components/TableSection";
 import Footer from "./components/FooterSection";
 
@@ -44,7 +44,7 @@ function App() {
       </Row>
       <Row className="graph-section"></Row>
       <Col className="col-four" lg={12}>
-        <Graphh />
+        <Graph dataGraph={fuelDataAll} />
       </Col>
       <Row className="table-section">
         <Col className="d-flex justify-content-center" lg={12}>

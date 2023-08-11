@@ -55,7 +55,7 @@ const data = [
   },
 ];
 
-export default function Graphh() {
+let Graph = (props) => {
   const isMobile = window.innerWidth <= 767; // Define mobile breakpoint
   return (
     <Container fluid className="graph-container">
@@ -65,7 +65,7 @@ export default function Graphh() {
           <LineChart
             width={isMobile ? 400 : 800}
             height={isMobile ? 400 : 800}
-            data={data}
+            data={props.dataGraph}
             margin={{
               top: 5,
               right: 30,
@@ -108,3 +108,5 @@ export default function Graphh() {
     </Container>
   );
 }
+
+export default  Graph;
