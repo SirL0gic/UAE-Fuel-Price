@@ -12,11 +12,24 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [fuelData, setFuelData] = useState([null]);
+  const [fuelDataAll, setFuelDataAll] = useState([]);
 
-  axios.defaults.baseURL = "";
 
-  useEffect(() => {}, []);
+
+  let fetchFuelDataAll = async () => {
+    try {
+      axios.defaults.baseURL = "http://localhost:4000";
+      const response = await axios.get("/api/all-fuel-data");
+      setFuelDataAll(response.data);
+      console.log("All fuel data retrieved")
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchFuelDataAll();
+  }, []);
 
   return (
     <Container fluid className="main-container">
