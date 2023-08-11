@@ -14,28 +14,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [fuelDataAll, setFuelDataAll] = useState([]); // all data
   const [fuelDataGraph, setFuelDataGraph] = useState([]); // 6 months data
-  const [currentPrice, setCurrentPrice] = useState([]);
 
   let fetchFuelDataAll = async () => {
     try {
       axios.defaults.baseURL = "http://localhost:4000";
       const response = await axios.get("/api/all-fuel-data");
       setFuelDataAll(response.data);
-      console.log("All fuel data retrieved");
+      setCurrentPrice(response.data)
+      console.log("All Fuel Data Retrieved");
     } catch (error) {
       console.log(error);
     }
   };
 
-  let sortCurrentPrice = () => {
-    var last_object = fuelDataAll[fuelDataAll.length - 1];
-    console.log(last_object);
-    setCurrentPrice(last_object);
-  };
-
   useEffect(() => {
     fetchFuelDataAll();
-    sortCurrentPrice();
   }, []);
 
   return (
@@ -47,7 +40,7 @@ function App() {
       </Row>
       <Row className="price-section">
         <Col className="col-four" lg={12}>
-          <PriceRow />
+          <PriceRow/>
         </Col>
       </Row>
       <Row className="graph-section"></Row>

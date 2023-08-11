@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 // USE SINGLE CARD ELSE THIS WILL NOT WORK AS PROPS NEED TO BE PSSED DOWN
@@ -14,7 +16,32 @@ let CardBox = (props) => {
   );
 };
 
-let PriceRow = (props) => {
+let PriceRow = () => {
+
+  const [currentPrice, setCurrentPrice] = useState([]);
+
+  let sortCurrentPrice = () => {
+    var last_object = fuelDataAll[fuelDataAll.length - 1];
+    console.log(last_object.super98);
+    setCurrentPrice(last_object);
+  };
+
+  
+  let fetchCurrectPrice = async () => {
+    try {
+      axios.defaults.baseURL = "http://localhost:4000";
+      const response = await axios.get("/api/all-fuel-data");
+      setCurrentPrice(response.data[response.data.length - 1])
+      console.log("Current Prices Retrived");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCurrectPrice();
+  }, []);
+
   const monthNames = [
     "January",
     "February",
@@ -45,7 +72,7 @@ let PriceRow = (props) => {
           {" "}
           <CardBox
             image="https://i.imgur.com/fQnAmTV.png"
-            price={props.dataPrice}
+            price={currentPrice.super98 + " AED"} 
             type="Super (98) has a high octane rating and is appropriate for high-performance gasoline automobiles. Super fuel is required for high-performance vehicles"
           />
         </Col>
@@ -53,7 +80,7 @@ let PriceRow = (props) => {
           {" "}
           <CardBox
             image="https://i.imgur.com/oMpEZpa.png"
-            price="2.2 AED"
+            price={currentPrice.special95 + " AED"}
             type="Special (95) has a high octane rating and provides excellent performance in all gasoline-powered vehicles with medium compression engines. "
           />
         </Col>
@@ -61,7 +88,7 @@ let PriceRow = (props) => {
           {" "}
           <CardBox
             image="https://i.imgur.com/v8hiCr2.png"
-            price="2.2 AED"
+            price={currentPrice.ePlus91 + " AED"}
             type="E-Plus 91 fuel is typically used in engines with low compression. Customers who operate fleets and commercial trucks are likely to utilize this fuel"
           />
         </Col>
@@ -69,7 +96,7 @@ let PriceRow = (props) => {
           {" "}
           <CardBox
             image="https://i.imgur.com/kTjld9p.png"
-            price="2.2 AED"
+            price={currentPrice.diesel + " AED"}
             type="Diesel fuel, also called diesel oil or historically heavy oil, is any liquid fuel specifically designed for use in a diesel engine. Diesel engines are more fuel-efficient"
           />
         </Col>
