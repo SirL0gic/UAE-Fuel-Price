@@ -12,9 +12,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [fuelDataAll, setFuelDataAll] = useState([]);
-
-
+  const [fuelDataAll, setFuelDataAll] = useState([]); // all data
+  const [fuelDataGraph, setFuelDataGraph] = useState([]); // 6 months data
 
   let fetchFuelDataAll = async () => {
     try {
