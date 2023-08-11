@@ -15,7 +15,7 @@ let Hero = () => {
         </Col>
         <Col className="col-three" lg={6}>
           <div className="image-box">
-            <img src={carLogo}/>
+            <img src={carLogo} alt="car"/>
           </div>
         </Col>
       </Row>

@@ -7,7 +7,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 let CardBox = (props) => {
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={props.image} />
+      <Card.Img variant="top" src={props.image} alt="fuel-types" />
       <Card.Body>
         <Card.Title>{props.price}</Card.Title>
         <Card.Text>{props.type}</Card.Text>
