@@ -43,39 +43,8 @@ let webScraper = () => {
 
 
 
-//Query to insert all fuel data
-async function insertData(fuelData) {
-  const uri = process.env.MONGODB_URI;
-  const client = new MongoClient(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  var databaseName = "FuelWatch";
-  var collectionName = "AllData";
-  try {
-    await client.connect();
-    console.log("Connected to Atlas cluster");
-
-    const db = client.db(databaseName);
-    const collection = db.collection(collectionName);
-
-    await collection.insertMany(fuelData);
-    console.log("Inserted documents into collection");
-  } catch (err) {
-    console.error(err);
-  } finally {
-    await client.close();
-    console.log("Connection to Atlas cluster closed");
-  }
-}
-
-
-
-
 
 // insert just on data
-const { MongoClient } = require('mongodb');
-
 async function insertCurrentData(currentData) {
   const uri = process.env.MONGODB_URI;
 

@@ -20,13 +20,7 @@ let PriceRow = () => {
 
   const [currentPrice, setCurrentPrice] = useState([]);
 
-  let sortCurrentPrice = () => {
-    var last_object = fuelDataAll[fuelDataAll.length - 1];
-    console.log(last_object.super98);
-    setCurrentPrice(last_object);
-  };
 
-  
   let fetchCurrectPrice = async () => {
     try {
       axios.defaults.baseURL = "http://localhost:4000";

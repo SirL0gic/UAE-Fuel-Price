@@ -75,6 +75,25 @@ app.get("/api/all-fuel-data", async (req, res) => {
   }
 });
 
+app.get("/api/six-months", async (req,res) => {
+  var databaseName = "FuelWatch";
+  var collectionName = "AllData";
+
+  try {
+    const client = await MongoClient.connect(url, { useNewUrlParser: true });
+    const db = client.db(databaseName);
+    const collection = db.collection(collectionName);
+    const result = await collection.find({}).toArray();
+    console.log("6 months data retrieved from DB.");
+    client.close();
+    res.send(result.slice(-6)); //number of months 
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error retrieving data from DB.");
+  }
+  
+})
+
 
 app.listen(port, host, () => {
   console.log("Server is now running on port", port);

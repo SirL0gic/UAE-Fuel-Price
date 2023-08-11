@@ -19,8 +19,9 @@ function App() {
     try {
       axios.defaults.baseURL = "http://localhost:4000";
       const response = await axios.get("/api/all-fuel-data");
+      const graph_data_response = await axios.get("/api/six-months");
       setFuelDataAll(response.data);
-      setCurrentPrice(response.data)
+      setFuelDataGraph(graph_data_response.data);
       console.log("All Fuel Data Retrieved");
     } catch (error) {
       console.log(error);
@@ -45,7 +46,7 @@ function App() {
       </Row>
       <Row className="graph-section"></Row>
       <Col className="col-four" lg={12}>
-        <Graph dataGraph={fuelDataAll} />
+        <Graph dataGraph={fuelDataGraph} />
       </Col>
       <Row className="table-section">
         <Col className="d-flex justify-content-center" lg={12}>
