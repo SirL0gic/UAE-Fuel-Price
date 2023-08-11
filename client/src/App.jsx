@@ -48,7 +48,7 @@ function App() {
       </Col>
       <Row className="table-section">
         <Col className="d-flex justify-content-center" lg={12}>
-          <FuelPriceTable />
+          <FuelPriceTable dataTable={fuelDataAll} />
         </Col>
       </Row>
       <Row className="footer-section">

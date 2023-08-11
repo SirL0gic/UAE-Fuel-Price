@@ -62,7 +62,7 @@ const FuelPriceTable = (props) => {
               </tr>
             </thead>
             <tbody>
-              {data.map((row, index) => (
+              {props.dataTable.map((row, index) => (
                 <tr key={index}>
                   <td>{row.date}</td>
                   <td>{row.super98}</td>
