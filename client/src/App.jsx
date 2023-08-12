@@ -17,7 +17,9 @@ function App() {
 
   let fetchFuelDataAll = async () => {
     try {
-      axios.defaults.baseURL = "http://localhost:4000";
+      var dev_env = "http://localhost:4000";
+      var production = "https://ec2-3-91-199-148.compute-1.amazonaws.com:4000"
+      axios.defaults.baseURL = production;
       const response = await axios.get("/api/all-fuel-data");
       const graph_data_response = await axios.get("/api/six-months");
       setFuelDataAll(response.data);

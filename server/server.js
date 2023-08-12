@@ -13,6 +13,7 @@ const cheerio = require("cheerio");
 //Backend Config
 const app = express();
 const host = "127.0.0.1";
+const public_host = "0.0.0.0"
 const port = 4000;
 
 //Env variables
