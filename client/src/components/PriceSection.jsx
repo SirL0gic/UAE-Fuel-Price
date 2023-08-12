@@ -24,7 +24,7 @@ let PriceRow = () => {
   let fetchCurrectPrice = async () => {
     try {
       var dev_env = "http://localhost:4000";
-      var production = "http://ec2-3-91-199-148.compute-1.amazonaws.com:4000"
+      var production = "https://api.fuelwatch.xyz"
       axios.defaults.baseURL = production;
       const response = await axios.get("/api/all-fuel-data");
       setCurrentPrice(response.data[response.data.length - 1])
