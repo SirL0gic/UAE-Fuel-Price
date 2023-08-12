@@ -96,6 +96,6 @@ app.get("/api/six-months", async (req,res) => {
 })
 
 
-app.listen(port, host, () => {
+app.listen(port,public_host, () => {
   console.log("Server is now running on port", port);
 });
