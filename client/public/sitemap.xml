@@ -4,4 +4,9 @@
 <changefreq>monthly</changefreq>
 <priority>1.0</priority>
 </url>
+<url>
+<loc>https://fuelwatch.xyz/robots.txt</loc>
+<changefreq>monthly</changefreq>
+<priority>1.0</priority>
+</url>
 </urlset>

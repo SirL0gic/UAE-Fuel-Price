@@ -8,7 +8,8 @@ const path = require("path");
 const dotenv = require("dotenv");
 const { error } = require("console");
 const axios = require("axios");
-const cheerio = require("cheerio");
+const cheerio = require("cheerio"); //scraping
+const rateLimit = require("express-rate-limit") // for dos rate limit
 
 //Backend Config
 const app = express();
@@ -47,6 +48,13 @@ app.use((err, req, res, next) => {
   }
 });
 
+// Implement rate limiting middleware
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 10 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: "Too many requests from this IP, please try again later.",
+});
+app.use(limiter);
 
 app.get("/api/test", (req, res) => {
   res.send(`Server is running on ${host} at ${port}`);
@@ -92,7 +100,6 @@ app.get("/api/all-fuel-data", async (req, res) => {
     console.log("All data retrieved from DB.");
     client.close();
     res.send(result);
-    // console.log(result)
   } catch (err) {
     console.error(err);
     res.status(500).send("Error retrieving data from DB.");
