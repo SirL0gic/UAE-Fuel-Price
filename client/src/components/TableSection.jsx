@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
 
 const FuelPriceTable = (props) => {

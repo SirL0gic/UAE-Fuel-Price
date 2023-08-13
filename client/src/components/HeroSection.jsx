@@ -1,4 +1,3 @@
-// Comp
 import { Container, Row, Col } from "react-bootstrap";
 import carLogo from "../assets/car.svg"
 

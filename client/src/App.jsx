@@ -7,23 +7,26 @@ import Graph from "./components/GraphSection";
 import FuelPriceTable from "./components/TableSection";
 import Footer from "./components/FooterSection";
 
-// Styles
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [currentPrice, setCurrentPrice] = useState([]); // current month
   const [fuelDataAll, setFuelDataAll] = useState([]); // all data
   const [fuelDataGraph, setFuelDataGraph] = useState([]); // 6 months data
 
   let fetchFuelDataAll = async () => {
     try {
-      var dev_env = "http://localhost:4000";
+      var dev = "http://localhost:4000";
       var production = "https://api.fuelwatch.xyz"
       axios.defaults.baseURL = production;
-      const response = await axios.get("/api/all-fuel-data");
-      const graph_data_response = await axios.get("/api/six-months");
-      setFuelDataAll(response.data);
-      setFuelDataGraph(graph_data_response.data);
+
+      const current_response = await axios.get("/api/all-fuel-data");
+
+      setCurrentPrice(current_response.data[current_response.data.length - 1])
+      setFuelDataGraph(current_response.data.slice(-6)); 
+      setFuelDataAll(current_response.data);
+     
       console.log("All Fuel Data Retrieved");
     } catch (error) {
       console.log(error);
@@ -43,7 +46,7 @@ function App() {
       </Row>
       <Row className="price-section">
         <Col className="col-four" lg={12}>
-          <PriceRow/>
+          <PriceRow dataPrice={currentPrice}/>
         </Col>
       </Row>
       <Row className="graph-section"></Row>
