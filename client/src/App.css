@@ -60,8 +60,15 @@
   }
 }
 
+
 /* For iPad and Tablets */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   .headings-box {
     margin-top: 150px !important;
     margin-left: 60px;
