@@ -8,7 +8,7 @@ let Hero = () => {
       <Row>
         <Col className="col-two" lg={6}>
           <div className="headings-box">
-            <h1>Fuel Watch  UAE</h1>
+            <h1>Fuel Watch UAE</h1>
             <h2>Navigating Past & Present Fuel Prices</h2>
           </div>
         </Col>
