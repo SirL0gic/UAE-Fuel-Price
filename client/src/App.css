@@ -1,4 +1,4 @@
-/* for mobile phones */
+/* Iphone 12 pro */
 @media only screen and (max-width: 767px) {
   html,
   body {
@@ -25,7 +25,7 @@
 
   .price-card-container {
     margin-top: 50px !important;
-    margin-left: 27px !important;
+    margin-left: 27px  !important;
   }
 
   .price-heading {
@@ -75,6 +75,15 @@
   }
 }
 
+/* Samsunsung Galaxy S8+ */
+@media (width: 360px) and (height: 740px) {
+  .price-card-container {
+    margin-top: 50px!important;
+    margin-left: 17px  !important;
+}
+}
+
+/* For Desktop */
 .headings-box {
   margin-top: 300px;
   margin-left: 60px;
@@ -168,3 +177,4 @@
   font-style: italic;
   font-weight: bold;
 }
+
