@@ -1,4 +1,4 @@
-/* Iphone 12 pro */
+/* iPhone 12 pro and iPhone13 */
 @media only screen and (max-width: 767px) {
   html,
   body {
@@ -25,7 +25,236 @@
 
   .price-card-container {
     margin-top: 50px !important;
-    margin-left: 27px  !important;
+    margin-left: 27px !important;
+  }
+
+  .price-heading {
+    margin-bottom: 40px !important;
+    color: #ff705c;
+    font-size: 20px !important;
+    margin-left: -6px;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .recharts-wrapper {
+    margin-left: -50px !important;
+  }
+
+  .graph-container {
+    margin-top: 60px !important;
+  }
+
+  .recharts-default-legend {
+    margin-right: -35px !important;
+  }
+
+  .main-table {
+    width: 100% !important;
+    margin-left: 5px !important;
+  }
+
+  .table-heading {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #ff705c;
+    font-size: 40px !important;
+  }
+}
+
+/* For iPad and Tablets */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .headings-box {
+    margin-top: 150px !important;
+    margin-left: 60px;
+  }
+
+  .headings-box > h1 {
+    color: #ff715d;
+    font-weight: bold;
+    font-size: 50px !important;
+  }
+
+  .price-card-container-row {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+
+  .price-card-container {
+    margin-top: 50px !important;
+    margin-left: 250px !important;
+  }
+
+  .price-heading {
+    margin-bottom: 40px !important;
+    color: #ff705c;
+    font-size: 20px !important;
+    margin-left: -35px;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .recharts-wrapper {
+    margin-left: -50px !important;
+  }
+
+  .graph-container {
+    margin-top: 60px !important;
+  }
+
+  .recharts-default-legend {
+    margin-right: -35px !important;
+  }
+
+  .main-table {
+    width: 100% !important;
+    margin-left: 80px !important;
+  }
+
+  .table-heading {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #ff705c;
+    font-size: 40px !important;
+  }
+}
+
+/* ipad Pro 12.9 inch landscape  */
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  .headings-box {
+    margin-top: 300px;
+    margin-left: 60px;
+  }
+
+  .headings-box > h1 {
+    color: #ff715d;
+    font-weight: bold;
+    font-size: 100px;
+  }
+
+  .headings-box > h2 {
+    color: rgba(0, 0, 0, 0.539);
+  }
+
+  .image-box {
+    margin-top: 50px;
+  }
+
+  .col-one {
+    background-color: bisque;
+  }
+
+  .col-two {
+    background-color: bisque;
+  }
+
+  .price-section {
+    background-color: white;
+  }
+
+  .price-heading {
+    margin-bottom: 60px;
+    color: #ff705c;
+    font-size: 50px;
+    margin-left: 20px;
+  }
+
+  .price-card-container {
+    margin-top: 200px;
+    margin-left: 0px !important;
+  }
+
+  .price-card-container-row {
+    padding-right: 100px;
+    padding-left: 150px;
+  }
+
+  .graph-container {
+    margin-top: 150px;
+  }
+
+  .recharts-wrapper {
+    margin: auto;
+  }
+
+  .table-container {
+    margin-top: 100px;
+  }
+
+  .table-heading {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #ff705c;
+    font-size: 50px;
+  }
+
+  .main-table {
+    width: 80% !important;
+    margin-left: 140px !important;
+  }
+
+  .table {
+    border-color: black !important;
+    --bs-table-color: white !important;
+    --bs-table-striped-color: white !important;
+    --bs-table-bg: #ff705c !important;
+    --bs-table-striped-bg: transparent !important;
+  }
+
+  .footer-box {
+    margin-top: 50px;
+    border-top: 3px;
+    border-style: solid;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .footer-box > p {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: bold;
+  }
+}
+
+/* iPad Pro 12.9 portrait */
+@media (width: 1024px) and (height: 1259px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .headings-box {
+    margin-top: 150px !important;
+    margin-left: 60px;
+  }
+
+  .headings-box > h1 {
+    color: #ff715d;
+    font-weight: bold;
+    font-size: 50px !important;
+  }
+
+  .price-card-container-row {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+
+  .price-card-container {
+    margin-top: 50px !important;
+    margin-left: 0px !important;
   }
 
   .price-heading {
@@ -47,9 +276,13 @@
     margin-top: 60px !important;
   }
 
+  .recharts-default-legend {
+    margin-right: -35px !important;
+  }
+
   .main-table {
     width: 100% !important;
-    margin-left: 5px !important;
+    margin-left: 80px !important;
   }
 
   .table-heading {
@@ -60,27 +293,28 @@
   }
 }
 
-
-/* For iPad and Tablets */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .headings-box {
-    margin-top: 150px !important;
-    margin-left: 60px;
-  }
-}
-
 /* Samsunsung Galaxy S8+ */
 @media (width: 360px) and (height: 740px) {
   .price-card-container {
-    margin-top: 50px!important;
-    margin-left: 17px  !important;
+    margin-top: 50px !important;
+    margin-left: 15px !important;
+  }
+
+  .recharts-default-legend {
+    margin-right: -20px !important;
+  }
 }
+
+/* iPhone XR */
+@media (width: 414px) and (height: 896px) {
+  .price-card-container {
+    margin-top: 50px !important;
+    margin-left: 38px !important;
+  }
+
+  .recharts-default-legend {
+    margin-right: -45px !important;
+  }
 }
 
 /* For Desktop */
@@ -177,4 +411,3 @@
   font-style: italic;
   font-weight: bold;
 }
-
