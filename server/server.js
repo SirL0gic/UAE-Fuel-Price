@@ -9,12 +9,12 @@ const dotenv = require("dotenv");
 const { error } = require("console");
 const axios = require("axios");
 const cheerio = require("cheerio"); //scraping
-const rateLimit = require("express-rate-limit") // for dos rate limit
+const rateLimit = require("express-rate-limit"); // for dos rate limit
 
 //Backend Config
 const app = express();
 const host = "127.0.0.1";
-const public_host = "0.0.0.0"
+const public_host = "0.0.0.0";
 const port = 4000;
 
 //Env variables
@@ -24,9 +24,9 @@ const url = process.env.MONGODB_URI;
 
 //For cross orgin requests and Enable CORS for all routes.
 const cors = require("cors");
-app.use(cors());  //use this for debuging 
+app.use(cors()); //use this for debuging
 
-// Allow requests only from www.fuelwatch.xyz and fuelwatch.xyz, 
+// Allow requests only from www.fuelwatch.xyz and fuelwatch.xyz,
 // app.use(
 //   cors({
 //     origin: (origin, callback) => {
@@ -89,6 +89,22 @@ app.get("/api/mongo-test", (req, res) => {
 });
 
 app.get("/api/all-fuel-data", async (req, res) => {
+  //Months mapping
+  const monthOrder = {
+    January: 1,
+    February: 2,
+    March: 3,
+    April: 4,
+    May: 5,
+    June: 6,
+    July: 7,
+    August: 8,
+    September: 9,
+    October: 10,
+    November: 11,
+    December: 12,
+  };
+
   var databaseName = "FuelWatch";
   var collectionName = "AllData";
 
@@ -97,6 +113,14 @@ app.get("/api/all-fuel-data", async (req, res) => {
     const db = client.db(databaseName);
     const collection = db.collection(collectionName);
     const result = await collection.find({}).toArray();
+
+    // Sort the results based on the month
+    result.sort((a, b) => {
+      return (
+        monthOrder[a.date.split(" ")[0]] - monthOrder[b.date.split(" ")[0]]
+      );
+    });
+
     console.log("All data retrieved from DB.");
     client.close();
     res.send(result);
@@ -106,7 +130,6 @@ app.get("/api/all-fuel-data", async (req, res) => {
   }
 });
 
-
-app.listen(port,host, () => {
+app.listen(port, host, () => {
   console.log("Server is now running on port", port);
 });
