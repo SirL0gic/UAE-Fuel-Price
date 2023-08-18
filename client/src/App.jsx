@@ -22,7 +22,7 @@ function App() {
       axios.defaults.baseURL = dev;
 
       const current_response = await axios.get("/api/all-fuel-data");
-      console.log(current_response.data)
+
       setCurrentPrice(current_response.data[current_response.data.length - 1])
       setFuelDataGraph(current_response.data.slice(-6)); 
       setFuelDataAll(current_response.data);
