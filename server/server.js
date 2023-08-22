@@ -114,13 +114,20 @@ app.get("/api/all-fuel-data", async (req, res) => {
     const collection = db.collection(collectionName);
     const result = await collection.find({}).toArray();
 
-    // Sort the results based on the month
     result.sort((a, b) => {
-      return (
-        monthOrder[a.date.split(" ")[0]] - monthOrder[b.date.split(" ")[0]]
-      );
+      // Extract the month and year from the date
+      const [monthA, yearA] = a.date.split(" ");
+      const [monthB, yearB] = b.date.split(" ");
+    
+      // If years are different, sort by year
+      if (yearA !== yearB) {
+        return parseInt(yearA) - parseInt(yearB);
+      }
+    
+      // If years are the same, sort by month
+      return monthOrder[monthA] - monthOrder[monthB];
     });
-
+    
     console.log("All data retrieved from DB.");
     client.close();
     res.send(result);
@@ -133,11 +140,11 @@ app.get("/api/all-fuel-data", async (req, res) => {
 
 // Example current data object
 const currentData = {
-  date: "January 2022",
-  super98: "2.65",
-  special95: "2.53",
-  ePlus91: "2.46",
-  diesel: "2.56",
+  date: "April 2022",
+  super98: "3.74",
+  special95: "3.62",
+  ePlus91: "3.55",
+  diesel: "4.02",
 };
 
 // Function to insert single entry

@@ -44,51 +44,6 @@ let webScraper = () => {
 
 
 
-// insert just one data
-async function insertCurrentData(currentData) {
-  const uri = process.env.MONGODB_URI;
-
-  try {
-    const client = new MongoClient(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
-    await client.connect();
-    console.log("Connected to MongoDB");
-
-    const databaseName = "FuelWatch";
-    const collectionName = "AllData";
-    
-    const db = client.db(databaseName);
-    const collection = db.collection(collectionName);
-    
-    await collection.insertOne(currentData);
-    console.log("Inserted current data into collection");
-
-    client.close();
-    console.log("Connection to MongoDB closed");
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-// Example current data object
-const currentData = {
-  date: "February 2022",
-  super98: "2.94",
-  special95: "2.82",
-  ePlus91: "2.75",
-  diesel: "2.88",
-};
-
-// Call the function to insert current data
-insertCurrentData(currentData);
-
-
-
-
-
 
 
 
