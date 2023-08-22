@@ -44,7 +44,7 @@ let webScraper = () => {
 
 
 
-// insert just on data
+// insert just one data
 async function insertCurrentData(currentData) {
   const uri = process.env.MONGODB_URI;
 
@@ -75,11 +75,11 @@ async function insertCurrentData(currentData) {
 
 // Example current data object
 const currentData = {
-  date: "TEST",
-  super98: "3.14",
-  special95: "3.02",
-  ePlus91: "2.95",
-  diesel: "2.95",
+  date: "February 2022",
+  super98: "2.94",
+  special95: "2.82",
+  ePlus91: "2.75",
+  diesel: "2.88",
 };
 
 // Call the function to insert current data
@@ -91,19 +91,5 @@ insertCurrentData(currentData);
 
 
 
-// function to insert just one data
-const fuelData = [
-    // ... your fuel data objects here ...
-  ];
 
-function sortFuelDataByDate(data) {
-  // Sort the array by date in ascending order
-  data.sort((a, b) => {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
-    return dateA - dateB;
-  });
-
-  return data;
-}
 

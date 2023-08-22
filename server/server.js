@@ -130,6 +130,49 @@ app.get("/api/all-fuel-data", async (req, res) => {
   }
 });
 
+
+// Example current data object
+const currentData = {
+  date: "February 2022",
+  super98: "2.94",
+  special95: "2.82",
+  ePlus91: "2.75",
+  diesel: "2.88",
+};
+
+// Function to insert single entry
+async function insertCurrentData(currentData) {
+  const uri = process.env.MONGODB_URI;
+
+  try {
+    const client = new MongoClient(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    await client.connect();
+    console.log("Connected to MongoDB");
+
+    const databaseName = "FuelWatch";
+    const collectionName = "AllData";
+    
+    const db = client.db(databaseName);
+    const collection = db.collection(collectionName);
+    
+    await collection.insertOne(currentData);
+    console.log("Inserted current data into collection");
+
+    client.close();
+    console.log("Connection to MongoDB closed");
+  } catch (err) {
+    console.error(err);
+  }
+}
+// Call the function to insert current data
+insertCurrentData(currentData);
+
+
+
 app.listen(port, public_host, () => {
   console.log("Server is now running on port", port);
 });
