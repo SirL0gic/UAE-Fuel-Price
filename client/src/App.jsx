@@ -12,8 +12,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [currentPrice, setCurrentPrice] = useState([]); // current month
-  const [fuelDataAll, setFuelDataAll] = useState([]); // all data
   const [fuelDataGraph, setFuelDataGraph] = useState([]); // 6 months data
+  const [fuelDataAll, setFuelDataAll] = useState([]); // all data
+ 
 
   let fetchFuelDataAll = async () => {
     try {
@@ -25,7 +26,7 @@ function App() {
 
       setCurrentPrice(current_response.data[current_response.data.length - 1])
       setFuelDataGraph(current_response.data.slice(-6)); 
-      setFuelDataAll(current_response.data);
+      setFuelDataAll([...current_response.data].reverse());
      
       console.log("All Fuel Data Retrieved");
     } catch (error) {
