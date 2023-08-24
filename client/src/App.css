@@ -53,7 +53,7 @@
 
   .main-table {
     width: 100% !important;
-    margin-left: 5px !important;
+    margin-left: -4px !important;
   }
 
   .table-heading {
