@@ -20,7 +20,7 @@ function App() {
     try {
       var dev = "http://localhost:4000";
       var production = "https://api.fuelwatch.xyz"
-      axios.defaults.baseURL = dev;
+      axios.defaults.baseURL = production;
 
       const current_response = await axios.get("/api/all-fuel-data");
 
