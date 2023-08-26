@@ -1,10 +1,32 @@
+import { useState } from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
 
 const FuelPriceTable = (props) => {
+  // Initial state set to the current year
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  // Helper function to filter data by year
+  const getDataForYear = (data, year) => {
+    return data.filter((item) => new Date(item.date).getFullYear() == year);
+  };
+
+  const dataForCurrentYear = getDataForYear(props.dataTable, currentYear);
+
   return (
     <Container fluid className="table-container">
       <Row>
         <Col lg={12}>
+          <div className="text-center">
+            <div className="pagination-buttons">
+              {" "}
+              <button onClick={() => setCurrentYear(currentYear + 1)}>
+                Next Year
+              </button>
+              <button onClick={() => setCurrentYear(currentYear - 1)}>
+                Previous Year
+              </button>
+            </div>
+          </div>
           <Table striped bordered hover className="main-table">
             <thead>
               <tr>
@@ -16,7 +38,7 @@ const FuelPriceTable = (props) => {
               </tr>
             </thead>
             <tbody>
-              {props.dataTable.map((row, index) => (
+              {dataForCurrentYear.map((row, index) => (
                 <tr key={index}>
                   <td>{row.date}</td>
                   <td>{row.super98}</td>
