@@ -41,10 +41,10 @@ const FuelPriceTable = (props) => {
           <div className="text-center">
             <div className="pagination-buttons">
               {" "}
-              <button className="pag-prev" onClick={() => setCurrentYear(currentYear - 1)}>
+              <button className="pag-prev" onClick={() => setCurrentYear(currentYear + 1)}>
                 Prev
               </button>
-              <button className="pag-next" onClick={() => setCurrentYear(currentYear + 1)}>
+              <button className="pag-next" onClick={() => setCurrentYear(currentYear - 1)}>
                 Next
               </button>
             </div>
