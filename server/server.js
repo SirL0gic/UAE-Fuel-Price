@@ -24,29 +24,29 @@ const url = process.env.MONGODB_URI;
 
 //For cross orgin requests and Enable CORS for all routes.
 const cors = require("cors");
-app.use(cors()); //use this for debuging
+// app.use(cors()); //use this for debuging
 
 // Allow requests only from www.fuelwatch.xyz and fuelwatch.xyz,
-// app.use(
-//   cors({
-//     origin: (origin, callback) => {
-//       if (origin === "https://www.fuelwatch.xyz" || origin === "https://fuelwatch.xyz") {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//   })
-// );
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (origin === "https://www.fuelwatch.xyz" || origin === "https://fuelwatch.xyz") {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
 
 // Custom error handler for CORS errors
-// app.use((err, req, res, next) => {
-//   if (err.message === "Not allowed by CORS") {
-//     res.status(403).send("CORS Error: Not allowed by CORS");
-//   } else {
-//     next(err);
-//   }
-// });
+app.use((err, req, res, next) => {
+  if (err.message === "Not allowed by CORS") {
+    res.status(403).send("CORS Error: Not allowed by CORS");
+  } else {
+    next(err);
+  }
+});
 
 // Implement rate limiting middleware
 const limiter = rateLimit({
@@ -140,11 +140,11 @@ app.get("/api/all-fuel-data", async (req, res) => {
 
 // Example current data object
 const currentData = {
-  date: "March 2022",
-  super98: "3.23",
-  special95: "3.12",
-  ePlus91: "3.05",
-  diesel: "3.19",
+  date: "February 2023",
+  super98: "3.05",
+  special95: "2.93",
+  ePlus91: "2.86",
+  diesel: "3.38",
 };
 
 // Function to insert single entry
@@ -176,10 +176,9 @@ async function insertCurrentData(currentData) {
   }
 }
 // Call the function to insert current data
-insertCurrentData(currentData);
+// insertCurrentData(currentData);
 
 
-
-app.listen(port, host, () => {
+app.listen(port, public_host, () => {
   console.log("Server is now running on port", port);
 });
