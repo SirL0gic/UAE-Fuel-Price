@@ -53,7 +53,7 @@
 
   .main-table {
     width: 100% !important;
-    margin-left: -4px !important;
+    margin-left: -10px !important;
   }
 
   .table-heading {
@@ -200,7 +200,6 @@
 
   .main-table {
     width: 80% !important;
-    margin-left: 140px !important;
   }
 
   .table {
