@@ -24,29 +24,29 @@ const url = process.env.MONGODB_URI;
 
 //For cross orgin requests and Enable CORS for all routes.
 const cors = require("cors");
-// app.use(cors()); //use this for debuging
+app.use(cors()); //use this for debuging
 
 // Allow requests only from www.fuelwatch.xyz and fuelwatch.xyz,
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (origin === "https://www.fuelwatch.xyz" || origin === "https://fuelwatch.xyz") {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-  })
-);
+// app.use(
+//   cors({
+//     origin: (origin, callback) => {
+//       if (origin === "https://www.fuelwatch.xyz" || origin === "https://fuelwatch.xyz") {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//   })
+// );
 
 // Custom error handler for CORS errors
-app.use((err, req, res, next) => {
-  if (err.message === "Not allowed by CORS") {
-    res.status(403).send("CORS Error: Not allowed by CORS");
-  } else {
-    next(err);
-  }
-});
+// app.use((err, req, res, next) => {
+//   if (err.message === "Not allowed by CORS") {
+//     res.status(403).send("CORS Error: Not allowed by CORS");
+//   } else {
+//     next(err);
+//   }
+// });
 
 // Implement rate limiting middleware
 const limiter = rateLimit({
@@ -180,6 +180,6 @@ async function insertCurrentData(currentData) {
 
 
 
-app.listen(port, public_host, () => {
+app.listen(port, host, () => {
   console.log("Server is now running on port", port);
 });
