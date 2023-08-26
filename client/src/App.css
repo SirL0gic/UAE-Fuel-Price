@@ -396,15 +396,30 @@
 }
 
 .pagination-buttons {
-  margin-top:20px;
+  margin-top:30px;
 }
 
 .pag-next {
-  margin
-
+  margin-left:5px;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #FF705C;
+  color: #FF705C;
+  padding: 5px 10px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.pag-prev {}
+.pag-prev {
+  margin-right:5px;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #FF705C;
+  color: #FF705C;
+  padding: 5px 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
 
 .footer-box {
   margin-top: 50px;
