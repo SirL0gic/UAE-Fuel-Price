@@ -316,7 +316,7 @@
   }
 }
 
-/* For Desktop */
+/* General */
 .headings-box {
   margin-top: 300px;
   margin-left: 60px;
@@ -393,6 +393,10 @@
   --bs-table-striped-color: white !important;
   --bs-table-bg: #ff705c !important;
   --bs-table-striped-bg: transparent !important;
+}
+
+.pagination-buttons {
+  margin-top:20px;
 }
 
 .footer-box {

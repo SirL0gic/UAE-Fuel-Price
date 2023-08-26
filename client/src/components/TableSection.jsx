@@ -16,17 +16,6 @@ const FuelPriceTable = (props) => {
     <Container fluid className="table-container">
       <Row>
         <Col lg={12}>
-          <div className="text-center">
-            <div className="pagination-buttons">
-              {" "}
-              <button onClick={() => setCurrentYear(currentYear + 1)}>
-                Next Year
-              </button>
-              <button onClick={() => setCurrentYear(currentYear - 1)}>
-                Previous Year
-              </button>
-            </div>
-          </div>
           <Table striped bordered hover className="main-table">
             <thead>
               <tr>
@@ -49,6 +38,17 @@ const FuelPriceTable = (props) => {
               ))}
             </tbody>
           </Table>
+          <div className="text-center">
+            <div className="pagination-buttons">
+              {" "}
+              <button onClick={() => setCurrentYear(currentYear + 1)}>
+                Next
+              </button>
+              <button onClick={() => setCurrentYear(currentYear - 1)}>
+                Prev
+              </button>
+            </div>
+          </div>
         </Col>
       </Row>
     </Container>
