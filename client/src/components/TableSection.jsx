@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
+import { parse, getYear } from "date-fns"; // safari and macos need this for dates
 
 const FuelPriceTable = (props) => {
   // Initial state set to the current year
@@ -7,7 +8,7 @@ const FuelPriceTable = (props) => {
 
   // Helper function to filter data by year
   const getDataForYear = (data, year) => {
-    return data.filter((item) => new Date(item.date).getFullYear() == year);
+    return data.filter((item) => getYear(parse(item.date, "MMMM yyyy", new Date())) == year);
   };
 
   const dataForCurrentYear = getDataForYear(props.dataTable, currentYear);
