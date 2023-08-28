@@ -24,7 +24,7 @@ const url = process.env.MONGODB_URI;
 
 //For cross orgin requests and Enable CORS for all routes.
 const cors = require("cors");
-// app.use(cors()); //use this for debuging
+app.use(cors()); //use this for debuging
 
 // Allow requests only from www.fuelwatch.xyz and fuelwatch.xyz,
 // app.use(
