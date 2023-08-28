@@ -179,6 +179,6 @@ async function insertCurrentData(currentData) {
 // insertCurrentData(currentData);
 
 
-app.listen(port, public_host, () => {
+app.listen(port, host, () => {
   console.log("Server is now running on port", port);
 });
