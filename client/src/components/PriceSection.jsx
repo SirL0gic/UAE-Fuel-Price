@@ -12,23 +12,23 @@ let CardBox = (props) => {
   );
 };
 
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 let PriceRow = (props) => {
-
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
+  
   const currentDate = new Date();
   const currentMonthIndex = currentDate.getMonth();
   const currentMonthName = monthNames[currentMonthIndex];

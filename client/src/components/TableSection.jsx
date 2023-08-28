@@ -3,8 +3,10 @@ import { Container, Table, Row, Col } from "react-bootstrap";
 import { parse, getYear, format } from "date-fns"; // safari and macos need this for dates
 
 const FuelPriceTable = (props) => {
+
   // Get the current date formatted as "Month Year" (e.g., "February 2023")
   const currentMonthYear = format(new Date(), "MMMM yyyy");
+  
   // Parse the formatted date to a Date object and extract the year
   const yearFromFormattedDate = getYear(
     parse(currentMonthYear, "MMMM yyyy", new Date())
@@ -21,8 +23,6 @@ const FuelPriceTable = (props) => {
   };
 
   const dataForCurrentYear = getDataForYear(props.dataTable, currentYear);
-
-  console.log(props.dataTable)
 
   return (
     <Container fluid className="table-container">
