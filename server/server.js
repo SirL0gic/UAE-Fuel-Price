@@ -24,7 +24,7 @@ const url = process.env.MONGODB_URI;
 
 //For cross orgin requests and Enable CORS for all routes.
 const cors = require("cors");
- app.use(cors()); //use this for debuging
+app.use(cors()); //use this for debuging
 
 // Allow requests only from www.fuelwatch.xyz and fuelwatch.xyz,
 // app.use(
@@ -118,16 +118,16 @@ app.get("/api/all-fuel-data", async (req, res) => {
       // Extract the month and year from the date
       const [monthA, yearA] = a.date.split(" ");
       const [monthB, yearB] = b.date.split(" ");
-    
+
       // If years are different, sort by year
       if (yearA !== yearB) {
         return parseInt(yearA) - parseInt(yearB);
       }
-    
+
       // If years are the same, sort by month
       return monthOrder[monthA] - monthOrder[monthB];
     });
-    
+
     console.log("All data retrieved from DB.");
     client.close();
     res.send(result);
@@ -136,7 +136,6 @@ app.get("/api/all-fuel-data", async (req, res) => {
     res.status(500).send("Error retrieving data from DB.");
   }
 });
-
 
 // Example current data object
 const currentData = {
@@ -162,10 +161,10 @@ async function insertCurrentData(currentData) {
 
     const databaseName = "FuelWatch";
     const collectionName = "AllData";
-    
+
     const db = client.db(databaseName);
     const collection = db.collection(collectionName);
-    
+
     await collection.insertOne(currentData);
     console.log("Inserted current data into collection");
 
@@ -177,7 +176,6 @@ async function insertCurrentData(currentData) {
 }
 // Call the function to insert current data
 // insertCurrentData(currentData);
-
 
 app.listen(port, host, () => {
   console.log("Server is now running on port", port);
