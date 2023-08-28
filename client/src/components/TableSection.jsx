@@ -1,17 +1,28 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
-import { parse, getYear } from "date-fns"; // safari and macos need this for dates
+import { parse, getYear, format } from "date-fns"; // safari and macos need this for dates
 
 const FuelPriceTable = (props) => {
-  // Initial state set to the current year
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  // Get the current date formatted as "Month Year" (e.g., "February 2023")
+  const currentMonthYear = format(new Date(), "MMMM yyyy");
+  // Parse the formatted date to a Date object and extract the year
+  const yearFromFormattedDate = getYear(
+    parse(currentMonthYear, "MMMM yyyy", new Date())
+  );
+
+  // Initial state set to the current year using the parsed value
+  const [currentYear, setCurrentYear] = useState(yearFromFormattedDate);
 
   // Helper function to filter data by year
   const getDataForYear = (data, year) => {
-    return data.filter((item) => getYear(parse(item.date, "MMMM yyyy", new Date())) == year);
+    return data.filter(
+      (item) => getYear(parse(item.date, "MMMM yyyy", new Date())) == year
+    );
   };
 
   const dataForCurrentYear = getDataForYear(props.dataTable, currentYear);
+
+  console.log(props.dataTable)
 
   return (
     <Container fluid className="table-container">
@@ -42,10 +53,16 @@ const FuelPriceTable = (props) => {
           <div className="text-center">
             <div className="pagination-buttons">
               {" "}
-              <button className="pag-prev" onClick={() => setCurrentYear(currentYear + 1)}>
+              <button
+                className="pag-prev"
+                onClick={() => setCurrentYear(currentYear + 1)}
+              >
                 Prev
               </button>
-              <button className="pag-next" onClick={() => setCurrentYear(currentYear - 1)}>
+              <button
+                className="pag-next"
+                onClick={() => setCurrentYear(currentYear - 1)}
+              >
                 Next
               </button>
             </div>
