@@ -1,4 +1,4 @@
-// To get latest data
+//To get latest data
 let webScraper = () => {
   const url = "https://gulfnews.com/gold-forex/historical-fuel-rates";
 
@@ -39,9 +39,6 @@ let webScraper = () => {
       console.error("Error:", error);
     });
 };
-
-
-
 
 
 
