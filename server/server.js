@@ -139,11 +139,11 @@ app.get("/api/all-fuel-data", async (req, res) => {
 
 // Example current data object
 const currentData = {
-  date: "February 2023",
-  super98: "3.05",
-  special95: "2.93",
-  ePlus91: "2.86",
-  diesel: "3.38",
+  date: "September 2023",
+  super98: "3.42",
+  special95: "3.31",
+  ePlus91: "3.23",
+  diesel: "3.40",
 };
 
 // Function to insert single entry
