@@ -1,4 +1,8 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
+import special from "../assets/special-min.png"
+import superr from "../assets/super-min.png"
+import eplus from "../assets/eplus-min.png"
+import die from "../assets/die-min.png"
 
 let CardBox = (props) => {
   return (
@@ -43,7 +47,7 @@ let PriceRow = (props) => {
         <Col lg={3} sm={12}>
           {" "}
           <CardBox
-            image="https://i.imgur.com/fQnAmTV.png"
+            image={superr}
             price={props.dataPrice.super98 + " AED/L"}
             type="Super (98) has a high octane rating and is appropriate for high-performance gasoline automobiles. Super fuel is required for high-performance vehicles"
           />
@@ -51,7 +55,7 @@ let PriceRow = (props) => {
         <Col lg={3} sm={12}>
           {" "}
           <CardBox
-            image="https://i.imgur.com/oMpEZpa.png"
+            image={special}
             price={props.dataPrice.special95 + " AED/L"}
             type="Special (95) has a high octane rating and provides excellent performance in all gasoline-powered vehicles with medium compression engines. "
           />
@@ -59,7 +63,7 @@ let PriceRow = (props) => {
         <Col lg={3} sm={12}>
           {" "}
           <CardBox
-            image="https://i.imgur.com/v8hiCr2.png"
+            image={eplus}
             price={props.dataPrice.ePlus91 + " AED/L"}
             type="E-Plus 91 fuel is typically used in engines with low compression. Customers who operate fleets and commercial trucks are likely to utilize this fuel"
           />
@@ -67,7 +71,7 @@ let PriceRow = (props) => {
         <Col lg={3} sm={12}>
           {" "}
           <CardBox
-            image="https://i.imgur.com/kTjld9p.png"
+            image={die}
             price={props.dataPrice.diesel + " AED/L"}
             type="Diesel fuel, also called diesel oil or historically heavy oil, is any liquid fuel specifically designed for use in a diesel engine. Diesel engines are more fuel-efficient"
           />
