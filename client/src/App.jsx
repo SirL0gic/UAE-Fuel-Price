@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import axios from "axios";
 import Hero from "./components/HeroSection";
 import PriceRow from "./components/PriceSection";
 import Graph from "./components/GraphSection";
@@ -9,35 +8,20 @@ import Footer from "./components/FooterSection";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import db from "./assets/fuelData.json"
 
 function App() {
   const [currentPrice, setCurrentPrice] = useState([]); // current month
   const [fuelDataGraph, setFuelDataGraph] = useState([]); // 6 months data
   const [fuelDataAll, setFuelDataAll] = useState([]); // all data
- 
-
-  let fetchFuelDataAll = async () => {
-    try {
-      var dev = "http://localhost:4000";
-      var production = "https://api.fuelwatch.xyz"
-      axios.defaults.baseURL = dev;
-
-      const current_response = await axios.get("/api/all-fuel-data");
-
-      setCurrentPrice(current_response.data[current_response.data.length - 1])
-      setFuelDataGraph(current_response.data.slice(-6)); 
-      setFuelDataAll([...current_response.data].reverse());
-     
-      console.log("All Fuel Data Retrieved");
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
-    fetchFuelDataAll();
-  }, []);
-
+    const current_response = db;
+    setCurrentPrice(current_response[current_response.length - 1]);
+    setFuelDataGraph(current_response.slice(-6)); 
+    setFuelDataAll([...current_response].reverse());
+  }, []);  
+  
   return (
     <Container fluid className="main-container">
       <Row className="hero-section">
